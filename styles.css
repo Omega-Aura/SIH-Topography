@@ -1,0 +1,103 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            border: 2px solid #00A9E0;
+            background-color: #CAF0F8;
+            color: #004481;
+            border-radius: 0.75rem;
+            min-height: 80px;
+            flex-grow: 1;
+            font-weight: 600;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #0077B6;
+            margin: 0 0.5rem;
+            min-width: 30px;
+        }
+        .kpi-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border-left: 8px solid #00A9E0;
+        }
+        .kpi-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #004481;
+        }
+         @media (min-width: 768px) {
+            .kpi-number {
+                font-size: 4rem;
+            }
+        }
+        .kpi-label {
+            font-size: 1.125rem;
+            color: #0077B6;
+            margin-top: 0.5rem;
+        }
+        .data-carousel {
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .data-point {
+            position: absolute;
+            width: 90%;
+            text-align: center;
+            font-size: 1.125rem;
+            color: #0077B6;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .data-point.active {
+            animation: fadeInOut 2.5s forwards;
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+        .challenge-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid #00A9E0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
