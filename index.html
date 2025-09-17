@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Disbursement: Aadhaar Seeding & DBT Explained</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-[#004481]">
+
+    <header class="bg-[#004481] text-white text-center p-8">
+        <h1 class="text-3xl md:text-5xl font-extrabold">Unlocking Your Scholarship</h1>
+        <p class="mt-2 text-lg md:text-xl text-[#CAF0F8]">The Student's Guide to Aadhaar Seeding and Direct Benefit Transfer (DBT)</p>
+        <p class="mt-4 text-sm text-[#90E0EF]">An awareness initiative by the Ministry of Social Justice & Empowerment (MoSJE)</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="data-ticker" class="my-8">
+            <h2 class="text-xl md:text-2xl font-bold text-center mb-4">Crucial Data Points</h2>
+            <div class="data-carousel">
+                <div id="dataPoint1" class="data-point"></div>
+                <div id="dataPoint2" class="data-point"></div>
+                <div id="dataPoint3" class="data-point"></div>
+                <div id="dataPoint4" class="data-point"></div>
+                <!-- Fix: Added a fifth data point container to match the JavaScript array. -->
+                <div id="dataPoint5" class="data-point"></div>
+            </div>
+        </section>
+
+        <section id="intro" class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#004481] mb-4">A Vital Support System for Students</h2>
+            <p class="max-w-3xl mx-auto text-lg text-[#0077B6]">Pre-Matric and Post-Matric scholarships empower millions of students to pursue their educational dreams. The Government ensures this financial aid reaches students directly and on time through the Direct Benefit Transfer (DBT) system. However, a small technical step often becomes a major hurdle.</p>
+        </section>
+
+        <section id="the-problem" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">The Scale of the Problem</h2>
+            <p class="text-center text-lg text-[#0077B6] max-w-4xl mx-auto mb-8">The lack of awareness around Aadhaar seeding is causing significant national-level issues, from failed transactions to a large drop in beneficiary numbers.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <div class="kpi-card">
+                    <div class="kpi-number">4.24 Cr</div>
+                    <div class="kpi-label">Failed DBT Transactions (FY 2022-23)</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-number">~89 Lakh</div>
+                    <div class="kpi-label">Drop in SC/ST/OBC Scholarship Beneficiaries</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-number">1,983</div>
+                    <div class="kpi-label">Tripura Tribal Students Rejected due to UID Issues</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="data-driven-insights" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Key Data-Driven Insights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-center mb-4">Estimated Affected Students by State</h3>
+                    <p class="text-center text-[#0077B6] mb-4">Analysis suggests that scholarship delays are widespread, with some states showing a higher concentration of issues due to population size and digital literacy gaps.</p>
+                    <div class="chart-container" style="height: 380px;">
+                        <canvas id="stateWiseImpactChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-center mb-4">Odisha Scholarship Accounts Aadhaar Seeded</h3>
+                    <p class="text-center text-[#0077B6] mb-4">A CAG audit revealed that in Odisha, a vast majority of beneficiary accounts were not Aadhaar seeded, creating a major roadblock for scholarship disbursement.</p>
+                    <div class="chart-container">
+                        <canvas id="aadhaarSeedingStatusChart"></canvas>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-center mb-4">Dalit Student Scholarship Decline</h3>
+                    <p class="text-center text-[#0077B6] mb-4">Technical barriers and policy changes have contributed to a sharp fall in the number of Dalit students receiving scholarships between two consecutive financial years.</p>
+                     <div class="chart-container">
+                        <canvas id="dalitStudentDeclineChart"></canvas>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2">
+                    <h3 class="text-2xl font-bold text-center mb-4">Pending Applications in Punjab</h3>
+                    <p class="text-center text-[#0077B6] mb-4">The Standing Committee on Social Justice and Empowerment has noted a consistent issue of pending scholarship applications in Punjab, highlighting verification and approval bottlenecks.</p>
+                    <div class="chart-container">
+                        <canvas id="pendingApplicationsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Common Challenges Hindering Scholarship Utilization</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="challenge-card">
+                    <h4 class="font-semibold text-lg mb-2 text-[#004481]">Aadhaar Linking Issues</h4>
+                    <p class="text-sm text-gray-600">Many students face problems linking Aadhaar to bank accounts, causing failed DBT transactions. In Tripura, 1,983 ST students were rejected due to Aadhaar not being DBT-enabled.</p>
+                </div>
+                 <div class="challenge-card">
+                    <h4 class="font-semibold text-lg mb-2 text-[#004481]">Technical Glitches and Delays</h4>
+                    <p class="text-sm text-gray-600">Portal issues and delayed fund disbursal led to a decline of ~89 lakh beneficiaries. Experts attribute this to mandatory Aadhaar use and system delays.</p>
+                </div>
+                 <div class="challenge-card">
+                    <h4 class="font-semibold text-lg mb-2 text-[#004481]">Fund Misappropriation</h4>
+                    <p class="text-sm text-gray-600">Cases of fraudulent claims and fund misappropriation have been reported. In Himachal Pradesh, the CBI registered FIRs related to a multi-crore scholarship scam.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison" class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-12">
+            <h2 class="text-3xl font-bold text-center mb-6">Aadhaar Linked vs. Aadhaar Seeded for DBT</h2>
+            <p class="text-center text-lg text-[#0077B6] max-w-4xl mx-auto mb-8">Understanding this difference is crucial for receiving your scholarship without any delay. Let's break it down.</p>
+            <div class="flex flex-col md:flex-row gap-8 justify-center">
+
+                <div class="w-full md:w-1/2 border-2 border-red-300 bg-red-50 rounded-xl p-6">
+                    <h3 class="text-2xl font-bold text-red-800 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">❌</span> Aadhaar Linked Account
+                    </h3>
+                    <p class="text-red-700 mb-4">This is a basic level of connection, often done for identity verification (e-KYC).</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><span class="font-bold text-red-600 mr-2">Purpose:</span> Used mainly for identification and authentication.</li>
+                        <li class="flex items-start"><span class="font-bold text-red-600 mr-2">Functionality:</span> Proves you are who you say you are when opening an account or for other KYC purposes.</li>
+                        <li class="flex items-start"><span class="font-bold text-red-600 mr-2">Scholarships:</span> <span class="font-bold">INSUFFICIENT</span> for receiving government subsidies like scholarships directly.</li>
+                    </ul>
+                </div>
+
+                <div class="w-full md:w-1/2 border-2 border-green-300 bg-green-50 rounded-xl p-6">
+                    <h3 class="text-2xl font-bold text-green-800 mb-4 flex items-center">
+                       <span class="text-3xl mr-3">✔️</span> Aadhaar Seeded & DBT Enabled
+                    </h3>
+                    <p class="text-green-700 mb-4">This links your Aadhaar to your bank account AND registers it with the NPCI mapper for receiving government funds.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><span class="font-bold text-green-600 mr-2">Purpose:</span> To create a direct pipeline for government benefits to your specific bank account.</li>
+                        <li class="flex items-start"><span class="font-bold text-green-600 mr-2">Functionality:</span> Enables Direct Benefit Transfer (DBT). All government payments are routed to this one designated account.</li>
+                        <li class="flex items-start"><span class="font-bold text-green-600 mr-2">Scholarships:</span> <span class="font-bold">ESSENTIAL</span> for receiving scholarship funds from schemes on the National Scholarship Portal (NSP).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="new-process" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">The New & Improved Process for AY 2024-25</h2>
+             <p class="text-center text-lg text-[#0077B6] max-w-4xl mx-auto mb-8">To prevent future delays, new mandatory steps have been introduced. Your application's success now depends on these crucial actions. The NPCI BASE platform is integrated with NSP for real-time checks.</p>
+            <div class="flex flex-col md:flex-row items-stretch justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <div class="flow-step md:w-1/5">
+                    <span class="font-bold text-3xl mr-3">1.</span>
+                    Mandatory Aadhaar eKYC & Biometric Authentication
+                </div>
+                <div class="flow-arrow">➜</div>
+                <div class="flow-step md:w-1/5">
+                    <span class="font-bold text-3xl mr-3">2.</span>
+                    Real-time Aadhaar Seeding Status Check on NSP
+                </div>
+                <div class="flow-arrow">➜</div>
+                 <div class="flow-step md:w-1/5">
+                    <span class="font-bold text-3xl mr-3">3.</span>
+                    Complete Seeding Within 15 Days of Application
+                </div>
+            </div>
+        </section>
+
+        <section id="awareness" class="text-center">
+            <h2 class="text-3xl font-bold mb-4">Spreading the Word: The Way Forward</h2>
+            <p class="max-w-3xl mx-auto text-lg text-[#0077B6] mb-8">To solve this problem at its root, extensive awareness campaigns are being launched through multiple channels.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-[#0077B6] text-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Gram Panchayats</h3>
+                    <p class="text-[#CAF0F8]">Notices and information displayed prominently on notice boards.</p>
+                </div>
+                <div class="bg-[#0077B6] text-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">School Committees</h3>
+                    <p class="text-[#CAF0F8]">Regular updates and guidance provided through school administration.</p>
+                </div>
+                <div class="bg-[#0077B6] text-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">PTA Meetings</h3>
+                    <p class="text-[#CAF0F8]">Dedicated discussion sessions for parents and teachers to clarify doubts.</p>
+                </div>
+                <div class="bg-[#0077B6] text-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Public Measures</h3>
+                    <p class="text-[#CAF0F8]">Broader awareness drives using digital and local media channels.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#004481] text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Ministry of Social Justice & Empowerment, Government of India</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
